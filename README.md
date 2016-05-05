@@ -5,7 +5,7 @@ This is just a bot to test the Watson Dialog API. This app simulates a _bank-ori
 
 ## Getting started
 
-The first step is to create an [IBM Bluemix](https://console.ng.bluemix.net/) account and a new service for [Dialog](https://console.ng.bluemix.net/catalog/services/dialog/); you can find it under the Catalog's Watson section. You will be using the Dialog service's username and password in a minute, so have them on hand; you can get them from your IBM Bluemix app's environment variables.
+The first step is to create an [IBM Bluemix](https://console.ng.bluemix.net/) account and a new service for [Dialog](https://console.ng.bluemix.net/catalog/services/dialog/); you can find it under the Catalog's Watson section. You will be using the Dialog service's username and password in a minute, so have them on hand; get them from your IBM Bluemix app's environment variables.
 
 Now, clone this repo using the command below:
 ```bash
@@ -33,14 +33,14 @@ Open the `config.json` file, located in the app root, and fill in the Dialog cre
 }
 ```
 
-It's time to upload the IVR dialog to your service. Go to the *dialog* directory and run this command:
+It's time to upload the IVR dialog to your service. Go to the `dialog` directory and run this command:
 ```bash
 $ node dialog-create.js ivr-es-dialog.xml MyDialog
 ```
 
 This script will use your credentials to create a new dialog. This dialog is just a question/answer flow based on the WatsonDialogDocument_1.0 schema. Feel free to add or remove conversation blocks from the XML dialog to improve the experience.
 
-The dialog creation outputs a *dialog_id*; don't forget to push it to the `config.json` file:
+The dialog creation outputs a **dialog_id**; don't forget to push it to the `config.json` file:
 ```json
 {
   "watson": {
@@ -71,13 +71,13 @@ $ npm start
 Navigate the server in a browser _et voilà_!
 
 The conversation must flow this way.
-- *Bot*: ¡Hola! Soy tu agente virtual. ¿Necesitas información?
-- *You*: Sip, claruuu
-- *Bot*: ¿Sobre qué necesitas información? Te puedo dar información de tus cuentas o tarjetas. Si lo prefieres, puede pasarte con un agente.
-- *You*: Quiero info de mis cuentas, por fa
-- *Bot*: Cuentas, perfecto. ¿Qué necesitas? Puedo informarte de tu saldo o de tus últimos movimientos.
-- *You*: Dime mi saldo, pero no me asustes
-- *Bot*: Pues tengo malas noticias. Estás en números rojos con -56,11 €. Voy a tener que hablar con tu madre para que te suba la paga.
+- **Bot**: ¡Hola! Soy tu agente virtual. ¿Necesitas información?
+- **You**: Sip, claruuu
+- **Bot**: ¿Sobre qué necesitas información? Te puedo dar información de tus cuentas o tarjetas. Si lo prefieres, puede pasarte con un agente.
+- **You**: Quiero info de mis cuentas, por fa
+- **Bot**: Cuentas, perfecto. ¿Qué necesitas? Puedo informarte de tu saldo o de tus últimos movimientos.
+- **You**: Dime mi saldo, pero no me asustes
+- **Bot**: Pues tengo malas noticias. Estás en números rojos con -56,11 €. Voy a tener que hablar con tu madre para que te suba la paga.
 
 ## License
 
