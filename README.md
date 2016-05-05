@@ -3,6 +3,8 @@
 
 This is just a bot to test the Watson Dialog API. This app simulates a _bank-oriented_ spanish [IVR](https://en.wikipedia.org/wiki/Interactive_voice_response). You can ask the bot about your bank accounts or credit cards; don't panic, all the conversation is _fake-data_ driven (© myself).
 
+[![Dependency Status](https://david-dm.org/vermicida/watson-bot-test.svg)](https://david-dm.org/vermicida/watson-bot-test)
+
 ## Getting started
 
 The first step is to create an [IBM Bluemix](https://console.ng.bluemix.net/) account and a new service for [Dialog](https://console.ng.bluemix.net/catalog/services/dialog/); you can find it under the Catalog's Watson section. You will be using the Dialog service's username and password in a minute, so have them on hand; get them from your IBM Bluemix app's environment variables.
