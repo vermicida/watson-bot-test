@@ -1,0 +1,14 @@
+
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8080
+  },
+  "watson": {
+    "dialog": {
+      "username": "your-ibm-watson-dialog-service-username",
+      "password": "your-ibm-watson-dialog-service-password",
+      "dialogId": "your-ibm-watson-dialog-service-dialog-id"
+    }
+  }
+}

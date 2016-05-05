@@ -1,0 +1,553 @@
+
+<dialog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="WatsonDialogDocument_1.0.xsd">
+    <flow>
+        <folder label="Main" id="folder-0">
+            <output>
+                <prompt selectionType="RANDOM">
+                    <item>
+                        <![CDATA[
+                            <p>¡Hola! Soy tu agente virtual. ¿Necesitas información?</p>
+                        ]]>
+                    </item>
+                    <item>
+                        <![CDATA[
+                            <p>Hola, soy tu agente virtual. ¿Te puedo echar una mano?</p>
+                        ]]>
+                    </item>
+                    <item>
+                        <![CDATA[
+                            <p>¡Ey! Tienes pinta de necesitar ayuda. ¿Necesitas ayuda?</p>
+                        ]]>
+                    </item>
+                </prompt>
+                <goto ref="user-input-0" />
+            </output>
+            <getUserInput id="user-input-0">
+                <input>
+                    <grammar>
+                        <item>Sí</item>
+                        <item>Si</item>
+                        <item>sí</item>
+                        <item>si</item>
+                        <item>Sip</item>
+                        <item>sip</item>
+                        <item>Claro</item>
+                        <item>claro</item>
+                        <item>Sí *</item>
+                        <item>Si *</item>
+                        <item>sí *</item>
+                        <item>si *</item>
+                        <item>Sip *</item>
+                        <item>sip *</item>
+                        <item>Claro *</item>
+                        <item>claro *</item>
+                        <item>* Sí</item>
+                        <item>* Si</item>
+                        <item>* sí</item>
+                        <item>* si</item>
+                        <item>* Sip</item>
+                        <item>* sip</item>
+                        <item>* claro</item>
+                        <item>* Claro</item>
+                        <item>* Sí *</item>
+                        <item>* Si *</item>
+                        <item>* sí *</item>
+                        <item>* si *</item>
+                        <item>* Sip *</item>
+                        <item>* sip *</item>
+                        <item>* Claro *</item>
+                        <item>* claro *</item>
+                    </grammar>
+                    <output>
+                        <prompt>
+                            <item>
+                                <![CDATA[
+                                    <p>¿Sobre qué necesitas información? Te puedo dar información de tus <u>cuentas</u> o <u>tarjetas</u>. Si lo prefieres, puede pasarte con un <u>agente</u>.</p>
+                                ]]>
+                            </item>
+                        </prompt>
+                        <getUserInput>
+                            <search ref="folder-1" />
+                            <default>
+                                <output>
+                                    <prompt selectionType="RANDOM">
+                                        <item>
+                                            <![CDATA[
+                                                <p>No tengo ni la más remota idea de qué necesitas. ¿Podrías preguntarme de nuevo?</p>
+                                            ]]>
+                                        </item>
+                                        <item>
+                                            <![CDATA[
+                                                <p>No entiendo tu pregunta. ¿Puedes intentarlo de nuevo?</p>
+                                            ]]>
+                                        </item>
+                                        <item>
+                                            <![CDATA[
+                                                <p>Aún sigo de fin de semana y no consigo centrarme. ¿Puedes repetirme la pregunta?</p>
+                                            ]]>
+                                        </item>
+                                        <item>
+                                            <![CDATA[
+                                                <p>Miau, miau, miau, miau... ¡uy perdón! Estaba despistado. ¿Qué decías?</p>
+                                            ]]>
+                                        </item>
+                                    </prompt>
+                                </output>
+                            </default>
+                        </getUserInput>
+                    </output>
+                </input>
+                <input>
+                    <grammar>
+                        <item>No</item>
+                        <item>no</item>
+                        <item>Nope</item>
+                        <item>nope</item>
+                        <item>Paso</item>
+                        <item>paso</item>
+                        <item>No *</item>
+                        <item>no *</item>
+                        <item>Nope *</item>
+                        <item>nope *</item>
+                        <item>Paso *</item>
+                        <item>paso *</item>
+                        <item>* No</item>
+                        <item>* no</item>
+                        <item>* Nope</item>
+                        <item>* nope</item>
+                        <item>* Paso</item>
+                        <item>* paso</item>
+                        <item>* No *</item>
+                        <item>* no *</item>
+                        <item>* Nope *</item>
+                        <item>* nope *</item>
+                        <item>* Paso *</item>
+                        <item>* paso *</item>
+                    </grammar>
+                    <output>
+                        <prompt>
+                            <item>
+                                <![CDATA[
+                                    <p>No hay problema. Si me necesitas, ya sabes dónde estoy :)</p>
+                                ]]>
+                            </item>
+                        </prompt>
+                    </output>
+                    <goto ref="folder-0" />
+                </input>
+            </getUserInput>
+        </folder>
+        <folder label="Library">
+            <folder label="Live Content" id="folder-1">
+                <!-- Información de cuentas -->
+                <input>
+                    <grammar>
+                        <item>Cuentas</item>
+                        <item>Cuenta</item>
+                        <item>cuentas</item>
+                        <item>cuenta</item>
+                        <item>* Cuentas</item>
+                        <item>* Cuenta</item>
+                        <item>* cuentas</item>
+                        <item>* cuenta</item>
+                        <item>* Cuentas *</item>
+                        <item>* Cuenta *</item>
+                        <item>* cuentas *</item>
+                        <item>* cuenta *</item>
+                        <item>Cuentas *</item>
+                        <item>Cuenta *</item>
+                        <item>cuentas *</item>
+                        <item>cuenta *</item>
+                        <item>Información * cuentas</item>
+                        <item>Información * cuenta</item>
+                        <item>información * cuentas</item>
+                        <item>información * cuenta</item>
+                        <item>Información * cuentas *</item>
+                        <item>Información * cuenta *</item>
+                        <item>información * cuentas *</item>
+                        <item>información * cuenta *</item>
+                        <item>* Información * cuentas *</item>
+                        <item>* Información * cuenta *</item>
+                        <item>* información * cuentas *</item>
+                        <item>* información * cuenta *</item>
+                        <item>* Información * cuentas</item>
+                        <item>* Información * cuenta</item>
+                        <item>* información * cuentas</item>
+                        <item>* información * cuenta</item>
+                    </grammar>
+                    <output>
+                        <prompt>
+                            <item>
+                                <![CDATA[
+                                    <p>Cuentas, perfecto. ¿Qué necesitas? Puedo informarte de tu <u>saldo</u> o de tus últimos <u>movimientos</u>.</p>
+                                ]]>
+                            </item>
+                        </prompt>
+                        <getUserInput>
+                            <!-- Saldo de la cuenta -->
+                            <input>
+                                <grammar>
+                                    <item>Saldo</item>
+                                    <item>saldo</item>
+                                    <item>Saldo *</item>
+                                    <item>saldo *</item>
+                                    <item>* Saldo *</item>
+                                    <item>* saldo *</item>
+                                    <item>* Saldo</item>
+                                    <item>* saldo</item>
+                                </grammar>
+                                <output>
+                                    <prompt selectionType="RANDOM">
+                                        <item>
+                                            <![CDATA[
+                                                <p>¡Marchando una de saldo! Este mes estás que te sales, tienes <u>8.432,93 €</u> en tu cuenta. Ahorrando para tu viaje a Bora Bora, ¿eh?</p>
+                                            ]]>
+                                        </item>
+                                        <item>
+                                            <![CDATA[
+                                                <p>¡Saldo consultado! Tienes <u>128,49 €</u> en tu cuenta. ¿Qué has hecho este mes? Eres un bolsillo roto.</p>
+                                            ]]>
+                                        </item>
+                                        <item>
+                                            <![CDATA[
+                                                <p>Pues tengo malas noticias. Estás en números rojos con <u>-56,11 €</u>. Voy a tener que hablar con tu madre para que te suba la paga.</p>
+                                            ]]>
+                                        </item>
+                                    </prompt>
+                                </output>
+                                <goto ref="folder-0" />
+                            </input>
+                            <!-- Movimientos de la cuenta -->
+                            <input>
+                                <grammar>
+                                    <item>Movimientos</item>
+                                    <item>movimientos</item>
+                                    <item>Movimientos *</item>
+                                    <item>movimientos *</item>
+                                    <item>* Movimientos *</item>
+                                    <item>* movimientos *</item>
+                                    <item>* Movimientos</item>
+                                    <item>* movimientos</item>
+                                </grammar>
+                                <output>
+                                    <prompt selectionType="RANDOM">
+                                        <item>
+                                            <![CDATA[
+                                                <p>A ver, toma nota:</p>
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Fecha</th>
+                                                            <th>Tipo</th>
+                                                            <th>Importe</th>
+                                                            <th>Concepto</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Ayer, 09:00 h.</td>
+                                                            <td>DEBE</td>
+                                                            <td>67,85 €</td>
+                                                            <td>SEGURO MÉDICO</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>02/05/2016, 13:21 h.</td>
+                                                            <td>DEBE</td>
+                                                            <td>788,64 €</td>
+                                                            <td>HIPOTECA</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/05/2016, 07:30 h.</td>
+                                                            <td>HABER</td>
+                                                            <td>2451,23 €</td>
+                                                            <td>INGRESO NÓMINA</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p>Aún te dura la nómina, ¡ánimo!.</p>
+                                            ]]>
+                                        </item>
+                                        <item>
+                                            <![CDATA[
+                                                <p>Te voy cantando:</p>
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Fecha</th>
+                                                            <th>Tipo</th>
+                                                            <th>Importe</th>
+                                                            <th>Concepto</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Hoy, 07:00 h.</td>
+                                                            <td>DEBE</td>
+                                                            <td>24,95 €</td>
+                                                            <td>FACTURA TELEFÓNICA</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ayer, 19:32 h.</td>
+                                                            <td>DEBE</td>
+                                                            <td>132,25 €</td>
+                                                            <td>SEXSHOP LOLI</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/05/2016, 08:15 h.</td>
+                                                            <td>DEBE</td>
+                                                            <td>98,36 €</td>
+                                                            <td>FACTURA ELECTRICIDAD</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p>¿Algo que comentar del segundo movimiento?</p>
+                                            ]]>
+                                        </item>
+                                    </prompt>
+                                </output>
+                                <goto ref="folder-0" />
+                            </input>
+                        </getUserInput>
+                    </output>
+                </input>
+                <!-- Información de Tarjetas -->
+                <input>
+                    <grammar>
+                        <item>Tarjetas</item>
+                        <item>Tarjeta</item>
+                        <item>tarjetas</item>
+                        <item>tarjeta</item>
+                        <item>* Tarjetas</item>
+                        <item>* Tarjeta</item>
+                        <item>* tarjetas</item>
+                        <item>* tarjeta</item>
+                        <item>* Tarjetas *</item>
+                        <item>* Tarjeta *</item>
+                        <item>* tarjetas *</item>
+                        <item>* tarjeta *</item>
+                        <item>Tarjetas *</item>
+                        <item>Tarjeta *</item>
+                        <item>tarjetas *</item>
+                        <item>tarjeta *</item>
+                        <item>Información * tarjetas</item>
+                        <item>Información * tarjeta</item>
+                        <item>información * tarjetas</item>
+                        <item>información * tarjeta</item>
+                        <item>Información * tarjetas *</item>
+                        <item>Información * tarjeta *</item>
+                        <item>información * tarjetas *</item>
+                        <item>información * tarjeta *</item>
+                        <item>* Información * tarjetas *</item>
+                        <item>* Información * tarjeta *</item>
+                        <item>* información * tarjetas *</item>
+                        <item>* información * tarjeta *</item>
+                        <item>* Información * tarjetas</item>
+                        <item>* Información * tarjeta</item>
+                        <item>* información * tarjetas</item>
+                        <item>* información * tarjeta</item>
+                    </grammar>
+                    <output>
+                        <prompt>
+                            <item>
+                                <![CDATA[
+                                    <p>¡Que sean tarjetas! ¿Quieres conocer tu <u>saldo</u> o tus últimos <u>movimientos</u>?</p>
+                                ]]>
+                            </item>
+                        </prompt>
+                        <getUserInput>
+                            <!-- Saldo de la tarjeta -->
+                            <input>
+                                <grammar>
+                                    <item>Saldo</item>
+                                    <item>saldo</item>
+                                    <item>Saldo *</item>
+                                    <item>saldo *</item>
+                                    <item>* Saldo *</item>
+                                    <item>* saldo *</item>
+                                    <item>* Saldo</item>
+                                    <item>* saldo</item>
+                                </grammar>
+                                <output>
+                                    <prompt selectionType="RANDOM">
+                                        <item>
+                                            <![CDATA[
+                                                <p>¡Marchando una de saldo! Este mes estás que te sales, tienes <u>8.432,93 €</u> en tu cuenta. Ahorrando para tu viaje a Bora Bora, ¿eh?</p>
+                                            ]]>
+                                        </item>
+                                        <item>
+                                            <![CDATA[
+                                                <p>¡Saldo consultado! Tienes <u>128,49 €</u> en tu cuenta. ¿Qué has hecho este mes? Eres un bolsillo roto.</p>
+                                            ]]>
+                                        </item>
+                                        <item>
+                                            <![CDATA[
+                                                <p>Pues tengo malas noticias. Estás en números rojos con <u>-56,11 €</u>. Voy a tener que hablar con tu madre para que te suba la paga.</p>
+                                            ]]>
+                                        </item>
+                                    </prompt>
+                                </output>
+                                <goto ref="folder-0" />
+                            </input>
+                            <!-- Movimientos de la tarjeta -->
+                            <input>
+                                <grammar>
+                                    <item>Movimientos</item>
+                                    <item>movimientos</item>
+                                    <item>Movimientos *</item>
+                                    <item>movimientos *</item>
+                                    <item>* Movimientos *</item>
+                                    <item>* movimientos *</item>
+                                    <item>* Movimientos</item>
+                                    <item>* movimientos</item>
+                                </grammar>
+                                <output>
+                                    <prompt selectionType="RANDOM">
+                                        <item>
+                                            <![CDATA[
+                                                <p>A ver, toma nota:</p>
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Fecha</th>
+                                                            <th>Tipo</th>
+                                                            <th>Importe</th>
+                                                            <th>Concepto</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Ayer, 09:00 h.</td>
+                                                            <td>DEBE</td>
+                                                            <td>67,85 €</td>
+                                                            <td>SEGURO MÉDICO</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>02/05/2016, 13:21 h.</td>
+                                                            <td>DEBE</td>
+                                                            <td>788,64 €</td>
+                                                            <td>HIPOTECA</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/05/2016, 07:30 h.</td>
+                                                            <td>HABER</td>
+                                                            <td>2451,23 €</td>
+                                                            <td>INGRESO NÓMINA</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p>Aún te dura la nómina, ¡ánimo!.</p>
+                                            ]]>
+                                        </item>
+                                        <item>
+                                            <![CDATA[
+                                                <p>Te voy cantando:</p>
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Fecha</th>
+                                                            <th>Tipo</th>
+                                                            <th>Importe</th>
+                                                            <th>Concepto</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Hoy, 07:00 h.</td>
+                                                            <td>DEBE</td>
+                                                            <td>24,95 €</td>
+                                                            <td>FACTURA TELEFÓNICA</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ayer, 19:32 h.</td>
+                                                            <td>DEBE</td>
+                                                            <td>132,25 €</td>
+                                                            <td>SEXSHOP LOLI</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/05/2016, 08:15 h.</td>
+                                                            <td>DEBE</td>
+                                                            <td>98,36 €</td>
+                                                            <td>FACTURA ELECTRICIDAD</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p>¿Algo que comentar del segundo movimiento?</p>
+                                            ]]>
+                                        </item>
+                                    </prompt>
+                                </output>
+                                <goto ref="folder-0" />
+                            </input>
+                        </getUserInput>
+                    </output>
+                </input>
+                <!-- Contactar con Agente -->
+                <input>
+                    <grammar>
+                        <item>Agente</item>
+                        <item>agente</item>
+                        <item>* Agente</item>
+                        <item>* agente</item>
+                        <item>* Agente *</item>
+                        <item>* agente *</item>
+                        <item>Agente *</item>
+                        <item>agente *</item>
+                        <item>Información * agente</item>
+                        <item>información * agente</item>
+                        <item>Hablar * agente</item>
+                        <item>hablar * agente</item>
+                        <item>Contactar * agente</item>
+                        <item>contactar * agente</item>
+                        <item>Llamar * agente</item>
+                        <item>llamar * agente</item>
+                        <item>Información * agente *</item>
+                        <item>información * agente *</item>
+                        <item>Hablar * agente *</item>
+                        <item>hablar * agente *</item>
+                        <item>Contactar * agente *</item>
+                        <item>contactar * agente *</item>
+                        <item>Llamar * agente *</item>
+                        <item>llamar * agente *</item>
+                        <item>* información * agente *</item>
+                        <item>* hablar * agente *</item>
+                        <item>* contactar * agente *</item>
+                        <item>* llamar * agente *</item>
+                    </grammar>
+                    <output>
+                        <prompt>
+                            <item>
+                                <![CDATA[
+                                    <p>¡Oído cocina! Le vamos a pasar con un agente de carne y hueso. Dinos tu número de teléfono y en unos segundos te llamamos.</p>
+                                ]]>
+                            </item>
+                        </prompt>
+                        <getUserInput>
+                            <input>
+                                <grammar>
+                                    <item>! \d{9}</item>
+                                    <item>! \d{3}-\d{3}-\d{3}</item>
+                                    <item>! \d{3}.\d{3}.\d{3}</item>
+                                    <item>! \d{3} \d{3} \d{3}</item>
+                                </grammar>
+                                <action varName="Phone_Number" operator="SET_TO_USER_INPUT" />
+                                <output>
+                                    <prompt>
+                                        <item>
+                                            Llamando al número {Phone_Number}...
+                                        </item>
+                                    </prompt>
+                                </output>
+                                <goto ref="folder-0" />
+                            </input>
+                        </getUserInput>
+                    </output>
+                </input>
+            </folder>
+        </folder>
+    </flow>
+    <variables>
+        <var_folder name="Home">
+            <var name="Phone_Number" type="TEXT" />
+        </var_folder>
+    </variables>
+</dialog>

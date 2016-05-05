@@ -1,0 +1,36 @@
+{
+  "name": "watson-bot-test",
+  "version": "0.0.1",
+  "description": "This is a simple Watson Dialog test.",
+  "author": "Diego Herrera",
+  "homepage": "https://github.com/vermicida/watson-bot-test#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vermicida/watson-bot-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vermicida/watson-bot-test/issues"
+  },
+  "scripts": {
+    "start": "nodemon server/main.js"
+  },
+  "keywords": [
+    "bot",
+    "ibm",
+    "watson",
+    "dialog",
+    "ivr"
+  ],
+  "dependencies": {
+    "colour": "^0.7.1",
+    "dateformat": "^1.0.12",
+    "express": "^4.13.4",
+    "lodash": "^4.11.2",
+    "socket.io": "^1.4.6",
+    "watson-developer-cloud": "^1.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}
