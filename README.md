@@ -14,7 +14,7 @@ Now, clone this repo using the command below:
 $ git clone https://github.com/vermicida/watson-bot-test.git
 ```
 
-Then, install de app dependencies using NPM:
+Then, install the app dependencies using NPM:
 ```bash
 $ npm install
 ```
